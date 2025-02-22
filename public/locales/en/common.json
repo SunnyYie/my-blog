@@ -1,6 +1,5 @@
 {
-  "title": "hello",
-  "main": {
-    "text": "Implementing internationalization in page router"
-  }
+  "name": "mcgdg",
+  "title": "Blog",
+  "text": "This is a text"
 }
