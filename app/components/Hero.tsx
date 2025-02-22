@@ -2,6 +2,7 @@
 
 import { GitlabIcon as GitHub, Linkedin, Mail, ArrowRight } from 'lucide-react'
 import { Globe } from '@/components/magicui/globe'
+import { useTranslation } from '../_lib/i18n'
 import { motion } from 'framer-motion'
 import TypeWriter from './TypeWriter'
 
@@ -23,9 +24,17 @@ const CodePattern = () => (
   </svg>
 )
 
+interface HeroProps {
+  url: string
+}
+
 const typingTexts = ["Hello, I'm a Web Developer", 'Welcome to my blog']
 
-export default function Hero() {
+export default function Hero({ url }: HeroProps) {
+  // const { t } = useTranslation(url)
+
+  // console.log(t('title'))
+
   return (
     <section
       id="hero"
@@ -49,6 +58,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+              {/* t('title') */}
               SunnyYie
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
@@ -85,7 +95,7 @@ export default function Hero() {
 
             {/* 跳转到blog页 */}
             <motion.button
-              onClick={() => (window.location.href = '/blogs')}
+              onClick={() => (window.location.href = `${url}/blogs`)}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

@@ -4,6 +4,13 @@ import { Inter } from 'next/font/google'
 import type React from 'react'
 import './globals.css'
 
+import { languages } from '../_lib/i18n/setting'
+import { dir } from 'i18next'
+
+export async function generateStaticParams() {
+  return languages.map(lang => ({ lang }))
+}
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -12,9 +19,17 @@ export const metadata = {
   generator: 'v0.dev',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+  params: { lang },
+}: {
+  children: React.ReactNode
+  params: {
+    lang: string
+  }
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html suppressHydrationWarning lang={lang} dir={dir(lang)}>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="fixed top-4 right-4 z-50">
@@ -26,5 +41,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-
-import './globals.css'
