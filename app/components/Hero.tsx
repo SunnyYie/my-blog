@@ -5,13 +5,11 @@ import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import TypeWriter from './TypeWriter'
 
-interface HeroProps {
-  url?: string
-}
+interface HeroProps {}
 
 const typingTexts = ["Hello, I'm a Web Developer", 'Welcome to my blog']
 
-export default function Hero({ url }: HeroProps) {
+export default function Hero({}: HeroProps) {
   const t = useTranslations('HomePage')
 
   return (

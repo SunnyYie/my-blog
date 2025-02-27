@@ -1,5 +1,9 @@
 {
   "HomePage": {
     "title": "你好"
+  },
+  "language": {
+    "en": "英文",
+    "zh": "中文"
   }
 }

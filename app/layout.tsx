@@ -1,4 +1,4 @@
-import { LanguageSwitcher } from '@/components/language-switcher'
+import LanguageSwitcher from '@/components/language-switcher'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Inter } from 'next/font/google'
