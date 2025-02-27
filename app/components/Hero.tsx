@@ -1,47 +1,24 @@
 'use client'
 
 import { GitlabIcon as GitHub, Linkedin, Mail, ArrowRight } from 'lucide-react'
-import { Globe } from '@/components/magicui/globe'
-import { useTranslation } from '../_lib/i18n'
+import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import TypeWriter from './TypeWriter'
 
-//
-const CodePattern = () => (
-  <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
-    <pattern
-      id="pattern-circles"
-      x="0"
-      y="0"
-      width="50"
-      height="50"
-      patternUnits="userSpaceOnUse"
-      patternContentUnits="userSpaceOnUse"
-    >
-      <circle id="pattern-circle" cx="10" cy="10" r="1.6257413380501518" fill="#000"></circle>
-    </pattern>
-    <rect id="rect" x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
-  </svg>
-)
-
 interface HeroProps {
-  url: string
+  url?: string
 }
 
 const typingTexts = ["Hello, I'm a Web Developer", 'Welcome to my blog']
 
 export default function Hero({ url }: HeroProps) {
-  // const { t } = useTranslation(url)
-
-  // console.log(t('title'))
+  const t = useTranslations('HomePage')
 
   return (
     <section
       id="hero"
       className="min-h-screen relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900"
     >
-      <div className="absolute inset-0 z-0">{/* <CodePattern /> */}</div>
-
       {/* 渐变背景 */}
       <div className="absolute inset-0 z-0 opacity-30">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 animate-gradient-x"></div>
@@ -58,7 +35,7 @@ export default function Hero({ url }: HeroProps) {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              {/* t('title') */}
+              {/* {t('title')} */}
               SunnyYie
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
@@ -95,7 +72,7 @@ export default function Hero({ url }: HeroProps) {
 
             {/* 跳转到blog页 */}
             <motion.button
-              onClick={() => (window.location.href = `${url}/blogs`)}
+              onClick={() => (window.location.href = `blogs`)}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
