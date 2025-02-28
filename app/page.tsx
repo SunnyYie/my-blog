@@ -15,10 +15,10 @@ export default async function Home() {
       {/* Home页 */}
       <Hero />
       <About />
-      <Experience />
+      {/* <Experience /> */}
       <Skills />
       <Services />
-      <Education />
+      {/* <Education /> */}
       <Contact />
     </main>
   )

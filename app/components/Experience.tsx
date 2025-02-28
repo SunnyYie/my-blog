@@ -1,7 +1,6 @@
 "use client"
 
 import { Briefcase, Calendar, MapPin, Globe } from "lucide-react"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import AnimatedSectionHeader from "./AnimatedSectionHeader"
 
@@ -66,7 +65,7 @@ export default function Experience() {
               className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl relative overflow-hidden group"
             >
               <div
-                className="absolute top-0 right-0 w-32 h-32 bg-blue-200 dark:bg-blue-700 rounded-bl-full z-0 opacity-50 
+                className="absolute top-0 right-0 w-32 h-32 bg-blue-200 dark:bg-blue-700 rounded-bl-full z-0 opacity-50
                 transition-transform duration-300 group-hover:scale-110"
               ></div>
               <div className="relative z-10">
@@ -98,9 +97,6 @@ export default function Experience() {
             </motion.div>
           ))}
         </div>
-      </div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 -mb-32 -mr-32 opacity-20">
-        <Image src="/placeholder.svg?height=256&width=256" alt="Decorative background" width={256} height={256} />
       </div>
     </section>
   )

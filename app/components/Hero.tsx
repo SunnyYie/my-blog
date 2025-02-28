@@ -1,13 +1,12 @@
 'use client'
 
-import { GitlabIcon as GitHub, Linkedin, Mail, ArrowRight } from 'lucide-react'
+import { GitlabIcon as GitHub, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import TypeWriter from './TypeWriter'
+import IconLink from './IconLink'
 
 interface HeroProps {}
-
-const typingTexts = ["Hello, I'm a Web Developer", 'Welcome to my blog']
 
 export default function Hero({}: HeroProps) {
   const t = useTranslations('HomePage')
@@ -33,49 +32,29 @@ export default function Hero({}: HeroProps) {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              {/* {t('title')} */}
-              SunnyYie
+              {t('title')}
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
-              <TypeWriter texts={typingTexts} delay={100} loop={1} />
+              <TypeWriter texts={t('subtitle')} delay={100} loop={1} />
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
-              专注于使用 Prisma、PostgreSQL、React 和 Nest.js 构建可扩展的全栈应用程序。
+              {t('description')}
             </p>
             <div className="flex justify-center lg:justify-start space-x-4 mb-8">
-              <a
-                href="https://github.com/SunnyYie"
-                className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl"
-                aria-label="GitHub Profile"
-              >
-                <GitHub className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-              </a>
-              {/* 待替换为个人作品集 */}
-              <a
-                href="#"
-                className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-              </a>
-              {/* 待替换为SunnyDocs */}
-              <a
-                href="mailto:musmanzafar53@gmail.com"
-                className="p-3 rounded-full bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl"
-                aria-label="Email Contact"
-              >
-                <Mail className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-              </a>
+              <IconLink href="https://github.com/SunnyYie?tab=repositories" label="Github">
+                <GitHub />
+              </IconLink>
+              {/* todo:待替换为个人作品集 */}
+              {/* todo:待替换为SunnyDocs */}
             </div>
 
-            {/* 跳转到blog页 */}
             <motion.button
               onClick={() => (window.location.href = `blogs`)}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              了解更多
+              {t('explore')}
               <ArrowRight className="w-4 h-4" />
             </motion.button>
           </motion.div>

@@ -1,6 +1,7 @@
 import LanguageSwitcher from '@/components/language-switcher'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ModeToggle } from '@/components/mode-toggle'
+import { Toaster } from '@/components/ui/sonner'
 import { Inter } from 'next/font/google'
 import type React from 'react'
 import './globals.css'
@@ -30,9 +31,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <NextIntlClientProvider messages={messages}>
             <div className="fixed top-4 right-4 z-50">
               <ModeToggle />
-              <LanguageSwitcher />
+              {/* <LanguageSwitcher /> */}
             </div>
             {children}
+            <Toaster />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

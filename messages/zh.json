@@ -1,9 +1,26 @@
 {
   "HomePage": {
-    "title": "你好"
+    "title": "SunnyYie's Blog",
+    "subtitle": "你好，我是一名前端开发工程师.欢迎来到我的博客!",
+    "description": "专注于使用 Prisma、PostgreSQL、React 和 Nest.js 构建可扩展的全栈应用程序。",
+    "explore": "了解更多"
+  },
+  "FloatingNav": {
+    "home": "首页",
+    "about": "关于",
+    "contact": "联系",
+    "experience": "经验",
+    "skills": "技能",
+    "projects": "项目",
+    "services": "服务",
+    "education": "教育"
   },
   "language": {
     "en": "英文",
     "zh": "中文"
+  },
+  "About": {
+    "description": "作为一名充满激情的全栈开发人员，我专注于构建健壮且可扩展的 Web 应用程序。凭借在 Prisma,PostgreSQL,Nest.js、React方面的坚实基础，我创建了无缝的全栈解决方案，提供卓越的用户体验。",
+    "description2": "我的专业知识还包括现代框架如 Next.js 和状态管理工具如 Zustand。我致力于编写干净、高效的代码，并紧跟最新的行业趋势，为客户提供最前沿的解决方案。"
   }
 }

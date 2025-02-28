@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Code, Layout, Server, Smartphone } from "lucide-react"
-import Image from "next/image"
 
 export default function Services() {
   const services = [
@@ -62,9 +61,6 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
-      </div>
-      <div className="absolute top-0 left-0 w-64 h-64 -mt-32 -ml-32 opacity-20">
-        <Image src="/placeholder.svg?height=256&width=256" alt="Decorative background" width={256} height={256} />
       </div>
     </section>
   )

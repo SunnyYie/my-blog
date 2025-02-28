@@ -1,19 +1,22 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 
-const sections = [
-  { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'services', label: 'Services' },
-  { id: 'education', label: 'Education' },
-  { id: 'contact', label: 'Contact' },
-]
-
 export default function FloatingNav() {
+  const t = useTranslations('FloatingNav')
+
+  const sections = [
+    { id: 'hero', label: t('home') },
+    { id: 'about', label: t('about') },
+    // { id: 'experience', label: t('experience') },
+    { id: 'skills', label: t('skills') },
+    { id: 'services', label: t('services') },
+    // { id: 'education', label: t('education') },
+    { id: 'contact', label: t('contact') },
+  ]
+
   const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
