@@ -25,44 +25,33 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-4">
+            <button className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">
+              <Search className="h-5 w-5" />
+            </button>
+          </div>
+
           <div className="hidden md:flex md:absolute md:left-1/2 md:-translate-x-1/2">
             <div className="flex items-center space-x-4">
               <Link
                 href="/"
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
-                Feed
+                Home
               </Link>
               <Link
                 href="/popular"
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
-                Popular
+                About
               </Link>
               <Link
                 href="/bookmarks"
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
-                Bookmarks
-              </Link>
-              <Link
-                href="/discussions"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Discussions
+                Contact
               </Link>
             </div>
-          </div>
-
-          {/* Right side icons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">
-              <Search className="h-5 w-5" />
-            </button>
-            <button className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">
-              <Bell className="h-5 w-5" />
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -85,25 +74,19 @@ const Navbar = () => {
               href="/"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Feed
+              Home
             </Link>
             <Link
-              href="/popular"
+              href="/"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Popular
+              About
             </Link>
             <Link
-              href="/bookmarks"
+              href="/"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Bookmarks
-            </Link>
-            <Link
-              href="/discussions"
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Discussions
+              Contact
             </Link>
           </div>
         </div>
